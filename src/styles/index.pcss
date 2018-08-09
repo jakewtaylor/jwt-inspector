@@ -1,0 +1,57 @@
+@tailwind preflight;
+@tailwind utilities;
+
+html, body, #root {
+    @apply .min-h-screen;
+}
+
+.page {
+    @apply .bg-black .min-h-screen .p-4;
+}
+
+.jwt_field__container {
+    @apply .p-2;
+}
+
+.jwt_field {
+    @apply .p-2 .rounded .bg-grey-darker .w-full .text-grey-light .font-light .antialiased .font-mono;
+}
+
+.jwt_field:focus {
+    @apply .outline-none;
+}
+
+.jwt {
+    @apply .py-4 .flex .flex-wrap;
+}
+
+.jwt__section {
+    @apply .mb-6 .px-3;
+}
+
+.jwt__section.--half {
+    @apply .w-1/2;
+}
+
+.jwt__section.--full {
+    @apply .w-full;
+}
+
+.label {
+    @apply .uppercase .text-xs .mb-2 .text-grey .font-light;
+}
+
+.code {
+    @apply .block .text-grey .font-light;
+    line-height: 1.4rem;
+}
+
+.code pre > pre {
+    @apply .pl-6;
+}
+
+.code .token.property { @apply .text-red-light; }
+.code .token.string { @apply .text-green-light; }
+.code .token.boolean { @apply .text-blue-light; }
+.code .token.number { @apply .text-orange-light; }
+.code .token.timestamp { @apply .text-grey-darker .text-sm; }

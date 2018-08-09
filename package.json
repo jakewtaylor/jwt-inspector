@@ -1,0 +1,31 @@
+{
+  "name": "jwt-viewer",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "dependencies": {
+    "moment": "^2.22.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4",
+    "react-syntax-highlighter": "^8.0.1",
+    "refractor": "^2.6.0"
+  },
+  "scripts": {
+    "app": "electron .",
+    "app-dev": "ELECTRON_START_URL=http://localhost:3000 electron .",
+    "start": "yarn run watch:css & react-scripts start",
+    "build": "yarn run build:css && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build:css": "postcss src/styles/index.pcss -o public/style.css",
+    "watch:css": "postcss src/styles/index.pcss -o public/style.css -w"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.1.0",
+    "electron": "^2.0.7",
+    "postcss-cli": "^6.0.0",
+    "tailwindcss": "^0.6.4"
+  },
+  "homepage": "./"
+}
