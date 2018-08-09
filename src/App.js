@@ -6,7 +6,7 @@ import TokenInspector from './TokenInspector';
 
 class App extends Component {
     state = {
-        jwt: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRlc3QiOnRydWUsInRlc3QyIjoxMiwgImFub3RoZXJPYmoiOiB7ImxldCI6ICJ1cyIsICJzZWUiOiB0cnVlIH0gfQ.eyJzdWIiOjEsImlzcyI6Imh0dHBzOi8vdW5pdmVyc2l0aWVzLnRlc3QvYXBpL2xvZ2luIiwiaWF0IjoxNTMzODE0ODA1LCJleHAiOjE1MzM4MTQ4NjUsIm5iZiI6MTUzMzgxNDgwNSwianRpIjoiRk1DNkx2a3E4Q0syMFpBOCJ9.qYrROtPLitVpA5eeAqYPiI47inakYeSw0-ZPPmoq_B8',
+        jwt: '',
     }
 
     handleJwtChange = (e) => {
