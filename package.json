@@ -7,9 +7,7 @@
     "moment": "^2.22.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4",
-    "react-syntax-highlighter": "^8.0.1",
-    "refractor": "^2.6.0"
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "app": "electron .",
