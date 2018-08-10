@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-const renderVal = val => {
+const renderVal = (val) => {
     switch (typeof val) {
         case 'string':
             return <span className="token string">"{val}"</span>;
@@ -17,7 +17,7 @@ const renderVal = val => {
     }
 };
 
-const renderTimestamp = val => {
+const renderTimestamp = (val) => {
     if (typeof val !== 'number') return null;
 
     const timestamp = moment.unix(val);
@@ -58,10 +58,10 @@ const renderObj = (object, root = true) => {
     return items;
 }
 
-const Highlighter2 = ({ object }) => (
+const Highlighter = ({ object }) => (
     <code className="code">
         {renderObj(object)}
     </code>
 );
 
-export default Highlighter2;
+export default Highlighter;

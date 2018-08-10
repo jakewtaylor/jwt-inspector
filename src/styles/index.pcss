@@ -2,48 +2,96 @@
 @tailwind utilities;
 
 html, body, #root {
-    @apply .min-h-screen;
+    @apply .min-h-screen .bg-black;
 }
 
 .page {
-    @apply .bg-black .min-h-screen .p-4;
+    @apply .min-h-screen .p-4 .pt-1;
+}
+
+.item {
+    @apply .m-2 .mb-6 .pb-6 .border-b .border-grey-darkest;
+}
+
+.item.--condensed {
+    @apply .pb-2 .mt-0;
+}
+
+.actions {
+    @apply .flex .items-stretch .justify-end;
+}
+
+.action {
+    @apply .bg-grey-darkest .rounded .p-2 .text-base .text-grey .ml-1 .no-underline .flex .items-center .antialiased;
+    transition: all .2s;
+}
+
+.action:hover {
+    @apply .bg-grey-darker .text-grey-light;
+}
+
+.action:focus {
+    @apply .outline-none;
+}
+
+.action i {
+    @apply .block;
+}
+
+.action .label {
+    @apply .block .ml-1 .uppercase .text-sm;
 }
 
 .jwt_field__container {
-    @apply .p-2;
+    @apply .w-full .flex .items-stretch .mb-2;
 }
 
-.jwt_field {
-    @apply .p-2 .rounded .bg-grey-darker .w-full .text-grey-light .font-light .antialiased .font-mono;
+.jwt_field__container .jwt_field {
+    @apply .p-2 .rounded .bg-grey-darkest .text-grey .font-light .antialiased .font-mono .flex-1;
+    transition: all .2s;
 }
 
-.jwt_field:focus {
+.jwt_field__container .jwt_field:focus {
+    @apply .bg-grey-darker .text-grey-light;
+}
+
+.jwt_field__container .jwt_field:focus {
+    @apply .outline-none;
+}
+
+.jwt_field__container .action:focus {
     @apply .outline-none;
 }
 
 .jwt {
-    @apply .py-4 .flex .flex-wrap;
+    @apply .p-2 .pb-0 .-mx-4 .-mb-4 .flex .flex-wrap .justify-between;
 }
 
 .jwt__section {
-    @apply .mb-6 .px-3;
+    @apply .mb-4 .mx-2 .p-3 .bg-grey-darkest .rounded;
 }
 
 .jwt__section.--half {
-    @apply .w-1/2;
+    /* @apply .w-1/2; */
+    @apply .flex-1;
 }
 
 .jwt__section.--full {
     @apply .w-full;
 }
 
-.label {
+.jwt__section .label {
     @apply .uppercase .text-xs .mb-2 .text-grey .font-light;
 }
 
-.code {
+.jwt__section .code {
     @apply .block .text-grey .font-light;
     line-height: 1.4rem;
+}
+
+.code pre {
+    white-space: pre-wrap;
+    word-break: break-all;
 }
 
 .code pre > pre {
@@ -55,3 +103,46 @@ html, body, #root {
 .code .token.boolean { @apply .text-blue-light; }
 .code .token.number { @apply .text-orange-light; }
 .code .token.timestamp { @apply .text-grey-darker .text-sm; }
+
+.add {
+    @apply .p-2 .text-center .cursor-pointer .text-grey-darker;
+    transition: color .2s;
+}
+
+.add:hover {
+    @apply .text-grey-dark;
+}
+
+.add .add__icon {
+    font-size: 72px;
+}
+
+.invalid_token {
+    @apply .bg-grey-darkest .px-2 .py-4 .rounded .text-center .text-grey .antialiased;
+}
+
+.token_anatomy {
+    @apply .pt-4 .pb-1;
+}
+
+.token_anatomy .token {
+    @apply .font-mono;
+}
+
+.token_anatomy .token .part {
+    @apply .inline-block .pb-1 .border-b .relative .mb-8;
+}
+
+.token_anatomy .token .part:after {
+    @apply .absolute .pin-x .text-center;
+    top: 100%;
+    line-height: config('height.8');
+}
+
+.token_anatomy .token .part.header { @apply .border-red-light; }
+.token_anatomy .token .part.payload { @apply .border-blue-light; }
+.token_anatomy .token .part.signature { @apply .border-green-light; }
+
+.token_anatomy .token .part.header:after { content: 'header'; @apply .text-red-light; }
+.token_anatomy .token .part.payload:after { content: 'payload'; @apply .text-blue-light; }
+.token_anatomy .token .part.signature:after { content: 'signature'; @apply .text-green-light; }

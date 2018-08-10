@@ -6224,56 +6224,132 @@ html,
 body,
 #root {
   min-height: 100vh;
+  background-color: #22292f;
 }
 
 .page {
-  background-color: #22292f;
   min-height: 100vh;
   padding: 1rem;
+  padding-top: .25rem;
+}
+
+.item {
+  margin: .5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom-width: 1px;
+  border-color: #3d4852;
+}
+
+.item.--condensed {
+  padding-bottom: .5rem;
+  margin-top: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+}
+
+.action {
+  background-color: #3d4852;
+  border-radius: .25rem;
+  padding: .5rem;
+  font-size: 1rem;
+  color: #b8c2cc;
+  margin-left: .25rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: all .2s;
+}
+
+.action:hover {
+  background-color: #606f7b;
+  color: #dae1e7;
+}
+
+.action:focus {
+  outline: 0;
+}
+
+.action i {
+  display: block;
+}
+
+.action .label {
+  display: block;
+  margin-left: .25rem;
+  text-transform: uppercase;
+  font-size: .875rem;
 }
 
 .jwt_field__container {
-  padding: .5rem;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  margin-bottom: .5rem;
 }
 
-.jwt_field {
+.jwt_field__container .jwt_field {
   padding: .5rem;
   border-radius: .25rem;
-  background-color: #606f7b;
-  width: 100%;
-  color: #dae1e7;
+  background-color: #3d4852;
+  color: #b8c2cc;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  flex: 1;
+  transition: all .2s;
 }
 
-.jwt_field:focus {
+.jwt_field__container .jwt_field:focus {
+  background-color: #606f7b;
+  color: #dae1e7;
+}
+
+.jwt_field__container .jwt_field:focus {
+  outline: 0;
+}
+
+.jwt_field__container .action:focus {
   outline: 0;
 }
 
 .jwt {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: .5rem;
+  padding-bottom: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-bottom: -1rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .jwt__section {
-  margin-bottom: 1.5rem;
-  padding-left: .75rem;
-  padding-right: .75rem;
+  margin-bottom: 1rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  padding: .75rem;
+  background-color: #3d4852;
+  border-radius: .25rem;
 }
 
 .jwt__section.--half {
-  width: 50%;
+  /* @apply .w-1/2; */
+  flex: 1;
 }
 
 .jwt__section.--full {
   width: 100%;
 }
 
-.label {
+.jwt__section .label {
   text-transform: uppercase;
   font-size: .75rem;
   margin-bottom: .5rem;
@@ -6281,11 +6357,16 @@ body,
   font-weight: 300;
 }
 
-.code {
+.jwt__section .code {
   display: block;
   color: #b8c2cc;
   font-weight: 300;
   line-height: 1.4rem;
+}
+
+.code pre {
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 
 .code pre > pre {
@@ -6311,6 +6392,88 @@ body,
 .code .token.timestamp {
   color: #606f7b;
   font-size: .875rem;
+}
+
+.add {
+  padding: .5rem;
+  text-align: center;
+  cursor: pointer;
+  color: #606f7b;
+  transition: color .2s;
+}
+
+.add:hover {
+  color: #8795a1;
+}
+
+.add .add__icon {
+  font-size: 72px;
+}
+
+.invalid_token {
+  background-color: #3d4852;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: .25rem;
+  text-align: center;
+  color: #b8c2cc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.token_anatomy {
+  padding-top: 1rem;
+  padding-bottom: .25rem;
+}
+
+.token_anatomy .token {
+  font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+}
+
+.token_anatomy .token .part {
+  display: inline-block;
+  padding-bottom: .25rem;
+  border-bottom-width: 1px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.token_anatomy .token .part:after {
+  position: absolute;
+  right: 0;
+  left: 0;
+  text-align: center;
+  top: 100%;
+  line-height: 2rem;
+}
+
+.token_anatomy .token .part.header {
+  border-color: #ef5753;
+}
+
+.token_anatomy .token .part.payload {
+  border-color: #6cb2eb;
+}
+
+.token_anatomy .token .part.signature {
+  border-color: #51d88a;
+}
+
+.token_anatomy .token .part.header:after {
+  content: 'header';
+  color: #ef5753;
+}
+
+.token_anatomy .token .part.payload:after {
+  content: 'payload';
+  color: #6cb2eb;
+}
+
+.token_anatomy .token .part.signature:after {
+  content: 'signature';
+  color: #51d88a;
 }
 
 @media (min-width: 576px) {
