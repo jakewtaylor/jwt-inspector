@@ -1,8 +1,8 @@
-@tailwind preflight;
+@tailwind base;
 @tailwind utilities;
 
 html, body, #root {
-    @apply .min-h-screen .bg-black;
+    @apply .min-h-screen .bg-off-black;
 }
 
 .page {
@@ -10,7 +10,7 @@ html, body, #root {
 }
 
 .item {
-    @apply .m-2 .mb-6 .pb-6 .border-b .border-grey-darkest;
+    @apply .m-2 .mb-6 .pb-6 .border-b .border-gray-800;
 }
 
 .item.--condensed {
@@ -22,12 +22,12 @@ html, body, #root {
 }
 
 .action {
-    @apply .bg-grey-darkest .rounded .p-2 .text-base .text-grey .ml-1 .no-underline .flex .items-center .antialiased;
+    @apply .bg-gray-800 .rounded .p-2 .text-base .text-gray-500 .ml-1 .no-underline .flex .items-center .antialiased;
     transition: all .2s;
 }
 
 .action:hover {
-    @apply .bg-grey-darker .text-grey-light;
+    @apply .bg-gray-700 .text-gray-400;
 }
 
 .action:focus {
@@ -47,12 +47,12 @@ html, body, #root {
 }
 
 .jwt_field__container .jwt_field {
-    @apply .p-2 .rounded .bg-grey-darkest .text-grey .font-light .antialiased .font-mono .flex-1;
+    @apply .p-2 .rounded .bg-gray-800 .text-gray-500 .font-light .antialiased .font-mono .flex-1;
     transition: all .2s;
 }
 
 .jwt_field__container .jwt_field:focus {
-    @apply .bg-grey-darker .text-grey-light;
+    @apply .bg-gray-700 .text-gray-400;
 }
 
 .jwt_field__container .jwt_field:focus {
@@ -68,7 +68,7 @@ html, body, #root {
 }
 
 .jwt__section {
-    @apply .mb-4 .mx-2 .p-3 .bg-grey-darkest .rounded;
+    @apply .mb-4 .mx-2 .p-3 .bg-gray-800 .rounded;
 }
 
 .jwt__section.--half {
@@ -81,11 +81,11 @@ html, body, #root {
 }
 
 .jwt__section .label {
-    @apply .uppercase .text-xs .mb-2 .text-grey .font-light;
+    @apply .uppercase .text-xs .mb-2 .text-gray-500 .font-light;
 }
 
 .jwt__section .code {
-    @apply .block .text-grey .font-light;
+    @apply .block .text-gray-500 .font-light;
     line-height: 1.4rem;
 }
 
@@ -98,19 +98,19 @@ html, body, #root {
     @apply .pl-6;
 }
 
-.code .token.property { @apply .text-red-light; }
-.code .token.string { @apply .text-green-light; }
-.code .token.boolean { @apply .text-blue-light; }
-.code .token.number { @apply .text-orange-light; }
-.code .token.timestamp { @apply .text-grey-darker .text-sm; }
+.code .token.property { @apply .text-red-400; }
+.code .token.string { @apply .text-green-400; }
+.code .token.boolean { @apply .text-blue-400; }
+.code .token.number { @apply .text-orange-400; }
+.code .token.timestamp { @apply .text-gray-700 .text-sm; }
 
 .add {
-    @apply .p-2 .text-center .cursor-pointer .text-grey-darker;
+    @apply .p-2 .text-center .cursor-pointer .text-gray-700;
     transition: color .2s;
 }
 
 .add:hover {
-    @apply .text-grey-dark;
+    @apply .text-gray-600;
 }
 
 .add .add__icon {
@@ -118,7 +118,7 @@ html, body, #root {
 }
 
 .invalid_token {
-    @apply .bg-grey-darkest .px-2 .py-4 .rounded .text-center .text-grey .antialiased;
+    @apply .bg-gray-800 .px-2 .py-4 .rounded .text-center .text-gray-500 .antialiased;
 }
 
 .token_anatomy {
@@ -134,15 +134,15 @@ html, body, #root {
 }
 
 .token_anatomy .token .part:after {
-    @apply .absolute .pin-x .text-center;
+    @apply .absolute .inset-x-0 .text-center;
     top: 100%;
-    line-height: config('height.8');
+    line-height: theme('height.8');
 }
 
-.token_anatomy .token .part.header { @apply .border-red-light; }
-.token_anatomy .token .part.payload { @apply .border-blue-light; }
-.token_anatomy .token .part.signature { @apply .border-green-light; }
+.token_anatomy .token .part.header { @apply .border-red-400; }
+.token_anatomy .token .part.payload { @apply .border-blue-400; }
+.token_anatomy .token .part.signature { @apply .border-green-400; }
 
-.token_anatomy .token .part.header:after { content: 'header'; @apply .text-red-light; }
-.token_anatomy .token .part.payload:after { content: 'payload'; @apply .text-blue-light; }
-.token_anatomy .token .part.signature:after { content: 'signature'; @apply .text-green-light; }
+.token_anatomy .token .part.header:after { content: 'header'; @apply .text-red-400; }
+.token_anatomy .token .part.payload:after { content: 'payload'; @apply .text-blue-400; }
+.token_anatomy .token .part.signature:after { content: 'signature'; @apply .text-green-400; }
