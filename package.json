@@ -21,7 +21,7 @@
     "watch:css": "postcss src/styles/index.pcss -o public/style.css -w"
   },
   "devDependencies": {
-    "autoprefixer": "^9.1.0",
+    "autoprefixer": "^9.8.2",
     "electron": "^2.0.18",
     "postcss-cli": "^6.1.3",
     "tailwindcss": "^1.1.2"
